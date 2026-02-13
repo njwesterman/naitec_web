@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import ScrollProgress from "@/components/ScrollProgress";
+import BackToTop from "@/components/BackToTop";
 import { siteConfig } from "@/lib/seo-config";
 import {
   organizationJsonLd,
@@ -80,9 +83,13 @@ export const metadata: Metadata = {
     // yandex: "your-yandex-verification-code",
   },
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   category: "technology",
 };
@@ -113,13 +120,27 @@ export default function RootLayout({
             __html: JSON.stringify(websiteJsonLd()),
           }}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZMSH259P75"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZMSH259P75');
+          `}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ScrollProgress />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <BackToTop />
         <CookieConsent />
       </body>
     </html>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import {
@@ -6,37 +7,65 @@ import {
   StaggerContainer,
   StaggerItem,
   ScaleIn,
+  TiltCard,
 } from "@/components/motion";
-import { webPageJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
+import { webPageJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Digital Services",
+  title: "Digital Services — Web Development, AI & SEO in Newcastle",
   description:
-    "Explore NAITEC Digital's services: digital solutions, workflow automation, creative development, digital transformation, marketing, SEO, AI and more.",
+    "NAITEC Digital's services in Newcastle NSW: custom web development, AI automation, GovCMS, Drupal, SEO, UX design, cloud DevOps and digital transformation.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Digital Services | NAITEC Digital",
-    description: "Explore NAITEC Digital's services: digital solutions, workflow automation, creative development, digital transformation, marketing, SEO, AI and more.",
+    title: "Digital Services — Web Development, AI & SEO | NAITEC Digital Newcastle",
+    description: "NAITEC Digital's services in Newcastle NSW: custom web development, AI automation, GovCMS, Drupal, SEO, UX design, cloud DevOps and digital transformation.",
     url: "/services",
-    images: [{ url: "/images/pages/page-header.jpg", width: 1200, height: 630, alt: "NAITEC Digital Services" }],
+    images: [{ url: "/images/digitalservices.jpg", width: 1200, height: 630, alt: "NAITEC Digital Services Newcastle" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digital Services | NAITEC Digital",
-    description: "Explore NAITEC Digital's services: digital solutions, workflow automation, creative development, digital transformation, marketing, SEO, AI and more.",
-    images: ["/images/pages/page-header.jpg"],
+    title: "Digital Services — Web Development, AI & SEO | NAITEC Digital Newcastle",
+    description: "NAITEC Digital's services in Newcastle NSW: custom web development, AI automation, GovCMS, Drupal, SEO, UX design, cloud DevOps and digital transformation.",
+    images: ["/images/digitalservices.jpg"],
   },
 };
 
 const servicesJsonLd = [
   webPageJsonLd({
-    title: "Digital Services | NAITEC Digital",
-    description: "Explore NAITEC Digital's services: digital solutions, workflow automation, creative development, digital transformation, marketing, SEO, AI and more.",
+    title: "Digital Services — Web Development, AI & SEO | NAITEC Digital Newcastle",
+    description: "NAITEC Digital's services in Newcastle NSW: custom web development, AI automation, GovCMS, Drupal, SEO, UX design, cloud DevOps and digital transformation.",
     url: "/services",
   }),
   breadcrumbJsonLd([
     { name: "Home", url: "/" },
     { name: "Services", url: "/services" },
+  ]),
+  faqJsonLd([
+    {
+      question: "What digital services does NAITEC Digital offer in Newcastle?",
+      answer:
+        "NAITEC Digital offers custom web development, AI & workflow automation, creative design, digital transformation, cloud & DevOps, marketing & SEO, data analytics, and government digital services — all from our Newcastle NSW office.",
+    },
+    {
+      question: "Does NAITEC Digital work with government agencies?",
+      answer:
+        "Yes. We are a registered BuyICT supplier and specialise in GovCMS, Drupal and secure platform development for Australian federal, state and local government agencies.",
+    },
+    {
+      question: "Which technologies does NAITEC Digital use?",
+      answer:
+        "We build with React, Next.js, Angular, Drupal, GovCMS, Node.js, TypeScript, Python, AWS, Azure and Google Cloud — choosing the right stack for each project.",
+    },
+    {
+      question: "Can NAITEC Digital help with SEO and digital marketing?",
+      answer:
+        "Absolutely. We provide search engine optimisation, content strategy, Google Analytics integration and ongoing digital marketing to help Newcastle and Hunter Valley businesses rank higher in local search results.",
+    },
+    {
+      question: "Where is NAITEC Digital located?",
+      answer:
+        "Our office is at Level 2, 384 Hunter Street, Newcastle NSW 2300. We serve clients across the Hunter Valley, Central Coast, Sydney and all of Australia.",
+    },
   ]),
 ];
 
@@ -106,21 +135,52 @@ export default function ServicesPage() {
         subtitle="Digital solutions as unique as your business needs"
       />
 
-      <section className="bg-surface py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <FadeIn>
-            <p className="max-w-3xl text-lg text-text-muted">
-              At NAITEC Digital, we combine deep technical expertise in React, Angular,
-              Drupal, and AI with strategic thinking to help businesses across
-              Australia thrive. Our services are designed to empower your business with
-              intelligent tools and data-driven strategies for seamless customer
-              experiences.
-            </p>
-          </FadeIn>
-
-          <StaggerContainer className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.08}>
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/50 to-slate-50 py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -right-10 top-10 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
+          <div className="absolute -left-10 bottom-20 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, #1e3a5f 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr]">
+            <FadeIn direction="left">
+              <h3 className="text-2xl font-bold text-primary md:text-3xl">
+                Digital Solutions As Unique As Your Business
+              </h3>
+              <p className="mt-4 text-text-muted leading-relaxed">
+                At NAITEC Digital, we combine deep technical expertise in React, Angular,
+                Drupal, and AI with strategic thinking to help businesses across
+                Australia thrive. Our services are designed to empower your business with
+                intelligent tools and data-driven strategies for seamless customer
+                experiences.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:scale-105 hover:shadow-lg"
+              >
+                Get Started
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </FadeIn>
+            <FadeIn direction="right" delay={0.2}>
+              <div className="h-[380px] overflow-hidden rounded-2xl shadow-2xl">
+                <Image
+                  src="/images/digitalservices.jpg"
+                  alt="NAITEC Digital Services"
+                  width={600}
+                  height={400}
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            </FadeIn>
+          </div>
+          <StaggerContainer className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.08}>
             {services.map((service) => (
               <StaggerItem key={service.title}>
+                <TiltCard className="h-full">
                 <div className="group h-full rounded-2xl border border-border bg-white p-8 transition-all duration-300 hover:border-accent/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/5">
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-white group-hover:scale-110">
                     <svg
@@ -142,6 +202,7 @@ export default function ServicesPage() {
                     {service.description}
                   </p>
                 </div>
+                </TiltCard>
               </StaggerItem>
             ))}
           </StaggerContainer>

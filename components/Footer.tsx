@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/app/images/White-logo-no-background.png";
 
 export default function Footer() {
   return (
@@ -9,13 +8,14 @@ export default function Footer() {
       <div className="h-1 bg-gradient-to-r from-accent via-blue-400 to-accent" />
 
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-12 md:grid-cols-2">
           {/* Address */}
           <div>
             <Image
-              src={logo}
+              src="/images/White-logo-no-background.png"
               alt="NAITEC Digital"
-              height={48}
+              width={160}
+              height={24}
               className="mb-4 w-auto"
             />
             <address className="not-italic text-white/70 leading-relaxed">
@@ -26,24 +26,10 @@ export default function Footer() {
             </address>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="mb-4 text-lg font-bold">Contact</h3>
-            <p className="text-white/70">
-              Email:{" "}
-              <a
-                href="mailto:contact@naitec.com.au"
-                className="text-accent hover:text-accent-hover transition-colors"
-              >
-                contact@naitec.com.au
-              </a>
-            </p>
-          </div>
-
           {/* Links */}
           <div>
             <h3 className="mb-4 text-lg font-bold">Quick Links</h3>
-            <nav className="flex flex-col gap-2">
+            <nav className="grid grid-cols-2 gap-x-8 gap-y-2">
               {[
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About" },

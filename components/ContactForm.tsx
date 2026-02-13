@@ -59,7 +59,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label htmlFor="firstName" className="mb-2 block text-sm font-medium text-primary">
+          <label htmlFor="firstName" className="mb-2 block text-sm font-medium text-white">
             First name
           </label>
           <input
@@ -68,11 +68,11 @@ export default function ContactForm() {
             required
             value={formData.firstName}
             onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-            className="w-full rounded-lg border border-border bg-white px-4 py-3 text-primary outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
+            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
           />
         </div>
         <div>
-          <label htmlFor="lastName" className="mb-2 block text-sm font-medium text-primary">
+          <label htmlFor="lastName" className="mb-2 block text-sm font-medium text-white">
             Last name
           </label>
           <input
@@ -81,12 +81,12 @@ export default function ContactForm() {
             required
             value={formData.lastName}
             onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-            className="w-full rounded-lg border border-border bg-white px-4 py-3 text-primary outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
+            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
           />
         </div>
       </div>
       <div>
-        <label htmlFor="email" className="mb-2 block text-sm font-medium text-primary">
+        <label htmlFor="email" className="mb-2 block text-sm font-medium text-white">
           Email
         </label>
         <input
@@ -95,11 +95,11 @@ export default function ContactForm() {
           required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full rounded-lg border border-border bg-white px-4 py-3 text-primary outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
+          className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
         />
       </div>
       <div>
-        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-primary">
+        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-white">
           Subject
         </label>
         <input
@@ -108,11 +108,11 @@ export default function ContactForm() {
           required
           value={formData.subject}
           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-          className="w-full rounded-lg border border-border bg-white px-4 py-3 text-primary outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
+          className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
         />
       </div>
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-primary">
+        <label htmlFor="message" className="mb-2 block text-sm font-medium text-white">
           Message
         </label>
         <textarea
@@ -121,7 +121,7 @@ export default function ContactForm() {
           required
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full rounded-lg border border-border bg-white px-4 py-3 text-primary outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20 resize-none"
+          className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20 resize-none"
         />
       </div>
       {error && (
@@ -132,7 +132,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="rounded-full bg-accent px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full rounded-full bg-accent px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:scale-[1.02] hover:shadow-lg hover:shadow-accent/25 disabled:opacity-50 disabled:cursor-not-allowed sm:w-auto"
       >
         {loading ? "Sending..." : "Submit"}
       </button>

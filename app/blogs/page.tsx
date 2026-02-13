@@ -11,20 +11,20 @@ import { webPageJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import { siteConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-  title: "News",
+  title: "News & Insights",
   description:
-    "Insights and updates from NAITEC Digital — articles on digital transformation, AI, SEO, UX design, and more.",
+    "Digital transformation insights from NAITEC Digital in Newcastle — articles on AI, web development, SEO, GovCMS, UX design and emerging technology.",
   alternates: { canonical: "/blogs" },
   openGraph: {
     title: "News & Insights | NAITEC Digital",
-    description: "Insights and updates from NAITEC Digital — articles on digital transformation, AI, SEO, UX design, and more.",
+    description: "Digital transformation insights from NAITEC Digital in Newcastle — articles on AI, web development, SEO, GovCMS, UX design and emerging technology.",
     url: "/blogs",
     images: [{ url: "/images/pages/page-header.jpg", width: 1200, height: 630, alt: "NAITEC Digital Blog" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "News & Insights | NAITEC Digital",
-    description: "Insights and updates from NAITEC Digital — articles on digital transformation, AI, SEO, UX design, and more.",
+    description: "Digital transformation insights from NAITEC Digital in Newcastle — articles on AI, web development, SEO, GovCMS, UX design and emerging technology.",
     images: ["/images/pages/page-header.jpg"],
   },
 };
@@ -40,6 +40,16 @@ const blogsPageJsonLd = [
     isPartOf: { "@id": `${siteConfig.url}/#website` },
     about: { "@id": `${siteConfig.url}/#organization` },
     inLanguage: "en-AU",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: blogPosts.map((post, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      url: `${siteConfig.url}/blogs/${post.slug}`,
+      name: post.title,
+    })),
   },
   breadcrumbJsonLd([
     { name: "Home", url: "/" },
@@ -62,8 +72,13 @@ export default function BlogsPage() {
         subtitle="Articles, guides and perspectives from the NAITEC Digital team"
       />
 
-      <section className="bg-surface py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/50 to-slate-50 py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -right-10 top-10 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
+          <div className="absolute -left-10 bottom-20 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, #1e3a5f 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6">
           <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" staggerDelay={0.08}>
             {blogPosts.map((post) => (
               <StaggerItem key={post.slug}>

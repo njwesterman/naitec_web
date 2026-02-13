@@ -31,15 +31,23 @@ export function organizationJsonLd() {
   };
 }
 
-// LocalBusiness schema
+// LocalBusiness schema — heavily optimised for local Google results
 export function localBusinessJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${siteConfig.url}/#localbusiness`,
     name: siteConfig.name,
+    alternateName: "NAITEC Digital Pty Ltd",
     url: siteConfig.url,
-    image: `${siteConfig.url}/images/pages/page-header.jpg`,
+    image: [
+      `${siteConfig.url}/images/pages/page-header.jpg`,
+      `${siteConfig.url}/images/White-logo-no-background.png`,
+    ],
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteConfig.url}/images/White-logo-no-background.png`,
+    },
     description: siteConfig.description,
     email: siteConfig.email,
     address: {
@@ -57,15 +65,44 @@ export function localBusinessJsonLd() {
     },
     areaServed: [
       {
-        "@type": "Country",
-        name: "Australia",
+        "@type": "City",
+        name: "Newcastle",
+        containedInPlace: { "@type": "State", name: "New South Wales" },
+      },
+      { "@type": "City", name: "Lake Macquarie" },
+      { "@type": "City", name: "Maitland" },
+      { "@type": "City", name: "Port Stephens" },
+      { "@type": "City", name: "Cessnock" },
+      {
+        "@type": "AdministrativeArea",
+        name: "Hunter Valley",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Central Coast",
       },
       {
         "@type": "City",
-        name: "Newcastle",
+        name: "Sydney",
+        containedInPlace: { "@type": "State", name: "New South Wales" },
+      },
+      {
+        "@type": "Country",
+        name: "Australia",
       },
     ],
+    serviceArea: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: -32.9283,
+        longitude: 151.7817,
+      },
+      geoRadius: "200000", // 200 km around Newcastle
+    },
     priceRange: "$$",
+    currenciesAccepted: "AUD",
+    paymentAccepted: "Bank Transfer, Credit Card",
     sameAs: [siteConfig.social.linkedin],
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -73,6 +110,31 @@ export function localBusinessJsonLd() {
       opens: "09:00",
       closes: "17:00",
     },
+    // Professional credentials
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "government-supplier",
+        name: "BuyICT Registered Supplier",
+      },
+    ],
+    knowsAbout: [
+      "Web Development",
+      "Digital Transformation",
+      "AI Automation",
+      "GovCMS",
+      "Drupal",
+      "React",
+      "Next.js",
+      "Angular",
+      "SEO",
+      "UX Design",
+      "Cloud DevOps",
+      "Workflow Automation",
+      "Government Digital Services",
+      "Custom Software Development",
+    ],
+    slogan: "You Know Your Business. We Know Digital.",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Digital Services",
@@ -114,7 +176,31 @@ export function localBusinessJsonLd() {
           itemOffered: {
             "@type": "Service",
             name: "Marketing & SEO",
-            description: "Search engine optimisation, content strategy and digital marketing",
+            description: "Search engine optimisation, content strategy and digital marketing for Newcastle and Hunter Valley businesses",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Creative Development",
+            description: "Web design, responsive UI/UX, branding and visual identity for digital platforms",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Cloud & DevOps",
+            description: "AWS, Azure and GCP infrastructure, CI/CD pipelines and scalable cloud architecture",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Data & Analytics",
+            description: "Data strategy, dashboards, Google Analytics integration and business intelligence",
           },
         },
       ],

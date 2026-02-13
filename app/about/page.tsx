@@ -1,37 +1,39 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import {
   FadeIn,
   StaggerContainer,
   StaggerItem,
+  TiltCard,
 } from "@/components/motion";
 import { webPageJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About — Newcastle Digital Agency",
   description:
-    "Learn about NAITEC Digital — based in the heart of Newcastle, helping businesses across Australia work smarter with digital solutions.",
+    "Meet NAITEC Digital — a Newcastle NSW digital agency helping businesses and government across the Hunter Valley and Australia with web development, AI and digital transformation.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About NAITEC Digital",
+    title: "About NAITEC Digital — Newcastle Digital Agency",
     description:
-      "Learn about NAITEC Digital — based in the heart of Newcastle, helping businesses across Australia work smarter with digital solutions.",
+      "Meet NAITEC Digital — a Newcastle NSW digital agency helping businesses and government across the Hunter Valley and Australia with web development, AI and digital transformation.",
     url: "/about",
-    images: [{ url: "/images/pages/newcastle.jpg", width: 1200, height: 630, alt: "NAITEC Digital Newcastle Office" }],
+    images: [{ url: "/images/newcastle_office.jpg", width: 1200, height: 630, alt: "NAITEC Digital Newcastle Office" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About NAITEC Digital",
-    description: "Learn about NAITEC Digital — based in the heart of Newcastle, helping businesses across Australia work smarter with digital solutions.",
-    images: ["/images/pages/newcastle.jpg"],
+    title: "About NAITEC Digital — Newcastle Digital Agency",
+    description: "Meet NAITEC Digital — a Newcastle NSW digital agency helping businesses and government across the Hunter Valley and Australia with web development, AI and digital transformation.",
+    images: ["/images/newcastle_office.jpg"],
   },
 };
 
 const aboutJsonLd = [
   webPageJsonLd({
-    title: "About NAITEC Digital",
-    description: "Learn about NAITEC Digital — based in the heart of Newcastle, helping businesses across Australia work smarter with digital solutions.",
+    title: "About NAITEC Digital — Newcastle Digital Agency",
+    description: "Meet NAITEC Digital — a Newcastle NSW digital agency helping businesses and government across the Hunter Valley and Australia with web development, AI and digital transformation.",
     url: "/about",
   }),
   breadcrumbJsonLd([
@@ -79,8 +81,13 @@ export default function AboutPage() {
       ))}
       <PageHeader title="About" />
 
-      <section className="bg-surface py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/50 to-slate-50 py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -right-10 top-10 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
+          <div className="absolute -left-10 bottom-20 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, #1e3a5f 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <FadeIn direction="left">
               <h2 className="text-3xl font-bold text-primary md:text-4xl">
@@ -114,13 +121,13 @@ export default function AboutPage() {
           </div>
             </FadeIn>
             <FadeIn direction="right" delay={0.2}>
-              <div className="overflow-hidden rounded-2xl">
+              <div className="h-[500px] overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/pages/newcastle.jpg"
+                  src="/images/newcastle_office.jpg"
                   alt="Newcastle NSW - NAITEC Digital office location"
                   width={600}
                   height={500}
-                  className="w-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
             </FadeIn>
@@ -128,11 +135,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-surface-alt py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <StaggerContainer className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.1}>
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-10 top-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+          <div className="absolute -right-10 bottom-10 h-80 w-80 rounded-full bg-blue-400/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, #1e3a5f 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6">
+          <FadeIn>
+            <h2 className="text-center text-3xl font-bold text-primary md:text-4xl">Why work with us</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-text-muted">We combine technical depth with genuine partnership to deliver results that matter.</p>
+          </FadeIn>
+          <StaggerContainer className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.1}>
             {highlights.map((item) => (
               <StaggerItem key={item.title}>
+                <TiltCard className="h-full">
                 <div className="group h-full rounded-2xl bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-white group-hover:scale-110">
                     <svg
@@ -152,6 +172,7 @@ export default function AboutPage() {
                   <h3 className="text-lg font-bold text-primary">{item.title}</h3>
                   <p className="mt-2 text-sm text-text-muted">{item.description}</p>
                 </div>
+                </TiltCard>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -230,6 +251,31 @@ export default function AboutPage() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative overflow-hidden bg-accent py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-white/10 blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6 text-center">
+          <FadeIn>
+            <h2 className="text-3xl font-bold text-white md:text-4xl">
+              Let&apos;s build something great together
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-white/80">
+              Start your journey towards smarter business solutions with a free,
+              no-obligation consultation.
+            </p>
+            <Link
+              href="/contact"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-accent transition-all hover:bg-white/90 hover:scale-105 hover:shadow-lg"
+            >
+              Book Your Free Consultation
+            </Link>
+          </FadeIn>
         </div>
       </section>
     </>

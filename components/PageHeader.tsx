@@ -9,7 +9,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden bg-primary pt-28 pb-16">
+    <section className="relative overflow-hidden bg-primary pt-36 pb-16">
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-light to-primary opacity-90" />
       {/* Decorative orbs */}
       <div className="pointer-events-none absolute inset-0">

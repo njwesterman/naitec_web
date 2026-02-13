@@ -11,11 +11,13 @@ export const metadata: Metadata = {
     title: "Privacy Policy | NAITEC Digital",
     description: "NAITEC Digital Privacy Policy — how we collect, use, store, and disclose personal information.",
     url: "/privacy-policy",
+    images: [{ url: "/images/pages/page-header.jpg", width: 1200, height: 630, alt: "NAITEC Digital Privacy Policy" }],
   },
   twitter: {
     card: "summary",
     title: "Privacy Policy | NAITEC Digital",
     description: "NAITEC Digital Privacy Policy — how we collect, use, store, and disclose personal information.",
+    images: ["/images/pages/page-header.jpg"],
   },
 };
 
@@ -208,13 +210,13 @@ export default function PrivacyPolicyPage() {
               <p className="mt-4 text-text-muted">
                 <strong className="text-primary">NAITEC Digital</strong>
                 <br />
-                Email:{" "}
+                Please reach out via our{" "}
                 <a
-                  href="mailto:contact@naitec.com.au?subject=Privacy%20Policy%20Query"
+                  href="/contact"
                   className="text-accent hover:text-accent-hover transition-colors"
                 >
-                  contact@naitec.com.au
-                </a>
+                  contact form
+                </a>.
               </p>
             </div>
           </div>

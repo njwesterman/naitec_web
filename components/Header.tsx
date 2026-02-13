@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/app/images/White-logo-no-background.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -38,9 +37,10 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center">
           <Image
-            src={logo}
+            src="/images/White-logo-no-background.png"
             alt="NAITEC Digital"
-            height={54}
+            width={140}
+            height={38}
             className="w-auto"
             priority
           />

@@ -7,7 +7,7 @@ import {
   StaggerContainer,
   StaggerItem,
   ScaleIn,
-  Counter,
+  TiltCard,
 } from "@/components/motion";
 
 const whatWeDo = [
@@ -122,16 +122,16 @@ export default function Home() {
           <div className="absolute left-1/2 top-1/3 h-64 w-64 animate-[float_12s_ease-in-out_infinite_2s] rounded-full bg-blue-400/5 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-16 pt-24 md:py-28">
+        <div className="relative mx-auto max-w-7xl px-6 py-16 pt-32 md:py-28 md:pt-36">
           <h1 className="max-w-3xl text-4xl font-bold leading-tight text-white md:text-7xl animate-[fadeSlideUp_0.8s_ease-out_both]">
             You Know Your Business.
             <br />
             <span className="text-accent animate-[fadeSlideUp_0.8s_ease-out_0.3s_both] inline-block">We Know Digital.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70 animate-[fadeSlideUp_0.8s_ease-out_0.5s_both]">
-            Based in Newcastle NSW, we help businesses design, build, and improve
-            digital systems — from AI-powered automation and custom web applications
-            to full-scale digital transformation.
+            Based in Newcastle NSW, we help businesses
+            design, build, and improve digital systems — from AI-powered automation
+            and custom web applications to full-scale digital transformation.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row animate-[fadeSlideUp_0.8s_ease-out_0.7s_both]">
             <Link
@@ -150,28 +150,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="relative -mt-1 bg-gradient-to-r from-accent via-blue-500 to-accent py-12">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
-          {[
-            { value: 20, suffix: "+", label: "Years Experience" },
-            { value: 11, suffix: "+", label: "Countries Served" },
-            { value: 15, suffix: "+", label: "Industries Served" },
-            { value: 100, suffix: "%", label: "Australian Owned" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-3xl font-bold text-white md:text-4xl">
-                <Counter value={stat.value} suffix={stat.suffix} />
-              </div>
-              <p className="mt-1 text-sm text-white/80">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* What We Do */}
-      <section className="bg-surface py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/50 to-slate-50 py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -right-10 top-10 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
+          <div className="absolute -left-10 bottom-20 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, #1e3a5f 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6">
           <FadeIn>
             <h2 className="text-3xl font-bold text-primary md:text-4xl">What we do</h2>
             <p className="mt-4 max-w-2xl text-text-muted">
@@ -182,6 +168,7 @@ export default function Home() {
           <StaggerContainer className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.1}>
             {whatWeDo.map((item) => (
               <StaggerItem key={item.title}>
+                <TiltCard className="h-full">
                 <div className="group h-full rounded-2xl border border-border bg-white p-8 transition-all duration-300 hover:border-accent/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/5">
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-300 group-hover:bg-accent group-hover:text-white group-hover:scale-110">
                     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -193,15 +180,37 @@ export default function Home() {
                     {item.description}
                   </p>
                 </div>
+                </TiltCard>
               </StaggerItem>
             ))}
           </StaggerContainer>
+          <FadeIn delay={0.3}>
+            <div className="mt-12 text-center">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-3 text-sm font-medium text-primary transition-all hover:bg-surface-alt hover:border-accent/30 hover:shadow-md"
+              >
+                View All Services
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+
       {/* Our Expertise */}
-      <section className="bg-surface-alt py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-10 top-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+          <div className="absolute -right-10 bottom-10 h-80 w-80 rounded-full bg-blue-400/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, #1e3a5f 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-16 lg:grid-cols-[1fr_1fr]">
             <FadeIn direction="left">
               <h3 className="text-2xl font-bold text-primary md:text-3xl">
@@ -212,13 +221,13 @@ export default function Home() {
                 expertise and data-driven insights to deliver impactful digital
                 solutions.
               </p>
-              <div className="mt-8 overflow-hidden rounded-2xl">
+              <div className="mt-8 h-[500px] overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/pages/naitec-image.png"
+                  src="/images/nd_landing_hero_1.jpg"
                   alt="NAITEC Digital"
                   width={600}
                   height={400}
-                  className="w-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
             </FadeIn>
@@ -275,9 +284,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+
       {/* Blog Previews */}
-      <section className="bg-surface py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/50 to-slate-50 py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -right-10 top-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+          <div className="absolute left-1/3 bottom-10 h-60 w-60 rounded-full bg-blue-400/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, #1e3a5f 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6">
           <FadeIn>
             <h2 className="text-3xl font-bold text-primary md:text-4xl">
               Insights &amp; Updates
