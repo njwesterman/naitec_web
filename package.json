@@ -9,6 +9,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "deploy": "git add . && git commit -m \"Deploy\" && git push heroku main",
     "lint": "eslint"
   },
   "dependencies": {

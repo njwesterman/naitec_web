@@ -131,7 +131,7 @@ export default function ServicesPage() {
         />
       ))}
       <PageHeader
-        title="Digital services"
+        title="Digital Services"
         subtitle="Digital solutions as unique as your business needs"
       />
 

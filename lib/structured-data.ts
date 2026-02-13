@@ -21,11 +21,13 @@ export function organizationJsonLd() {
       postalCode: siteConfig.address.postalCode,
       addressCountry: siteConfig.address.addressCountry,
     },
-    sameAs: [siteConfig.social.linkedin],
+    sameAs: [siteConfig.social.linkedin, siteConfig.social.googleBusiness],
     contactPoint: {
       "@type": "ContactPoint",
+      telephone: siteConfig.phoneInternational,
       email: siteConfig.email,
       contactType: "customer service",
+      areaServed: "AU",
       availableLanguage: "English",
     },
   };
@@ -50,6 +52,7 @@ export function localBusinessJsonLd() {
     },
     description: siteConfig.description,
     email: siteConfig.email,
+    telephone: siteConfig.phoneInternational,
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.streetAddress,
@@ -103,7 +106,7 @@ export function localBusinessJsonLd() {
     priceRange: "$$",
     currenciesAccepted: "AUD",
     paymentAccepted: "Bank Transfer, Credit Card",
-    sameAs: [siteConfig.social.linkedin],
+    sameAs: [siteConfig.social.linkedin, siteConfig.social.googleBusiness],
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],

@@ -10,7 +10,8 @@ export const siteConfig = {
   creator: "NAITEC Digital",
   abn: "88 611 039 466",
   email: "contact@naitec.com.au",
-  phone: "",
+  phone: "0468 782 724",
+  phoneInternational: "+61468782724",
   address: {
     streetAddress: "Level 2, 384 Hunter Street",
     postalAddress: "PO Box 1069",
@@ -21,6 +22,7 @@ export const siteConfig = {
   },
   social: {
     linkedin: "https://www.linkedin.com/company/naitec-digital",
+    googleBusiness: "https://share.google/joKGzwgWJgbE1XTko",
   },
   keywords: [
     // Primary local

@@ -84,6 +84,28 @@ export default function ContactPage() {
                   PO Box 1069<br />
                   Newcastle NSW 2300
                 </address>
+                <a
+                  href="tel:+61468782724"
+                  className="mt-4 inline-flex items-center gap-2 text-accent font-medium transition-colors hover:text-accent-hover"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  0468 782 724
+                </a>
+              </div>
+
+              <div className="overflow-hidden rounded-2xl border border-border">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.8!2d151.7795!3d-32.9283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b7315c8a1b1b1b1%3A0x1!2sLevel%202%2F384%20Hunter%20St%2C%20Newcastle%20NSW%202300!5e0!3m2!1sen!2sau!4v1"
+                  width="100%"
+                  height="220"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="NAITEC Digital office location — Level 2, 384 Hunter Street, Newcastle NSW 2300"
+                />
               </div>
             </div>
           </div>
