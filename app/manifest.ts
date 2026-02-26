@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description:
       "Based in Newcastle NSW, NAITEC Digital helps businesses design, build, and improve the digital systems they rely on every day.",
     start_url: "/",
-    display: "standalone",
+    display: "browser",
     background_color: "#0f172a",
     theme_color: "#3b82f6",
     icons: [
