@@ -311,6 +311,41 @@ export function articleJsonLd(params: {
   };
 }
 
+// SoftwareApplication schema for showcased apps/games
+export function softwareApplicationJsonLd(params: {
+  name: string;
+  description: string;
+  url: string;
+  image: string;
+  operatingSystem?: string;
+  applicationCategory?: string;
+  creator?: string;
+  datePublished?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: params.name,
+    description: params.description,
+    url: params.url,
+    image: params.image,
+    operatingSystem: params.operatingSystem || "Web Browser",
+    applicationCategory: params.applicationCategory || "EducationalApplication",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "AUD",
+    },
+    creator: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: params.creator || siteConfig.name,
+    },
+    ...(params.datePublished && { datePublished: params.datePublished }),
+    inLanguage: "en-AU",
+  };
+}
+
 // FAQ schema for pages with Q&A-like content
 export function faqJsonLd(
   questions: { question: string; answer: string }[]

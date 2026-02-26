@@ -251,6 +251,92 @@ export default function GovernmentServicesPage() {
         </div>
       </section>
 
+      {/* Case Study — eSafety Commissioner */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/50 to-slate-50 py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -right-10 top-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+          <div className="absolute -left-10 bottom-10 h-80 w-80 rounded-full bg-blue-400/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, #1e3a5f 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6">
+          <FadeIn>
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent">Case Study</p>
+            <h2 className="mt-2 text-3xl font-bold text-primary md:text-4xl">
+              eSafety Commissioner — Robo Raven and the Ancient Relics
+            </h2>
+            <p className="mt-4 max-w-3xl text-text-muted">
+              The most successful educational resource ever launched by the Australian eSafety Commissioner — built by NAITEC Digital.
+            </p>
+          </FadeIn>
+
+          <div className="mt-12 grid items-center gap-12 lg:grid-cols-[400px_1fr]">
+            <FadeIn direction="left">
+              <div className="overflow-hidden rounded-2xl shadow-2xl">
+                <Image
+                  src="/images/blog/esafety-robo-raven-ancient-relics.png"
+                  alt="Robo Raven and the Ancient Relics — eSafety Commissioner online safety game built by NAITEC Digital"
+                  width={540}
+                  height={540}
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            </FadeIn>
+            <FadeIn direction="right" delay={0.2}>
+              <div className="space-y-4 text-text-muted leading-relaxed">
+                <p>
+                  NAITEC Digital was engaged to design, develop, and deploy <strong className="text-primary">Robo Raven and the Ancient Relics</strong> — a web-based game that teaches primary school students about online safety through interactive, game-based learning.
+                </p>
+                <p>
+                  Built with <strong className="text-primary">Angular and Ionic</strong> as a <strong className="text-primary">Progressive Web App</strong>, the game was specifically engineered for Australian school environments — including rural and remote schools with limited internet connectivity.
+                </p>
+                <p>
+                  The application is hosted on <strong className="text-primary"><Link href="https://www.govcms.gov.au/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GovCMS</Link></strong>, the Australian Government&apos;s Drupal-based SaaS platform, allowing the game to operate within existing government infrastructure with no additional hosting costs.
+                </p>
+                <p>
+                  All game state is kept entirely in memory — no logins, no accounts, no data persisted — ensuring no student or school can ever be identified through the application.
+                </p>
+              </div>
+
+              <StaggerContainer className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4" staggerDelay={0.1}>
+                {[
+                  { label: "Platform", value: "GovCMS" },
+                  { label: "Type", value: "PWA" },
+                  { label: "Stack", value: "Angular" },
+                  { label: "Impact", value: "#1 Launch" },
+                ].map((stat) => (
+                  <StaggerItem key={stat.label}>
+                    <div className="rounded-2xl border border-accent/10 bg-white/80 p-4 text-center shadow-sm backdrop-blur-sm">
+                      <div className="text-lg font-bold text-accent">{stat.value}</div>
+                      <p className="mt-1 text-xs text-text-muted">{stat.label}</p>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href="https://www.esafety.gov.au/esafetyrelics"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:scale-105 hover:shadow-lg hover:shadow-accent/25"
+                >
+                  Play the Game
+                </Link>
+                <Link
+                  href="/blogs/building-robo-raven-and-the-ancient-relics-for-the-esafety-commissioner"
+                  className="inline-flex items-center justify-center rounded-full border border-accent/30 bg-white px-6 py-3 text-sm font-semibold text-accent transition-all hover:border-accent hover:bg-accent/5"
+                >
+                  Read the Full Case Study
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+
       {/* BuyICT */}
       <section className="bg-accent py-24">
         <div className="mx-auto max-w-7xl px-6">

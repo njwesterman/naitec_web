@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost, getRecentPosts } from "@/lib/blog-data";
-import { articleJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
+import {
+  articleJsonLd,
+  breadcrumbJsonLd,
+  softwareApplicationJsonLd,
+  faqJsonLd,
+} from "@/lib/structured-data";
 import { siteConfig } from "@/lib/seo-config";
 
 interface BlogPostPageProps {
@@ -73,6 +78,79 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       { name: "News", url: "/blogs" },
       { name: post.title, url: `/blogs/${post.slug}` },
     ]),
+    // Slug-specific structured data for rich results
+    ...(slug ===
+    "building-robo-raven-and-the-ancient-relics-for-the-esafety-commissioner"
+      ? [
+          softwareApplicationJsonLd({
+            name: "Robo Raven and the Ancient Relics: A Mighty Heroes Adventure",
+            description:
+              "A web-based online safety game built by NAITEC Digital for the Australian eSafety Commissioner. Part of the Mighty Heroes series, it teaches primary school students about cyberbullying, privacy, critical thinking, and respectful online behaviour through game-based learning.",
+            url: "https://www.esafety.gov.au/esafetyrelics",
+            image: "/images/blog/esafety-robo-raven-ancient-relics.png",
+            applicationCategory: "EducationalApplication",
+            datePublished: "2026-02-01",
+          }),
+          faqJsonLd([
+            {
+              question:
+                "What is Robo Raven and the Ancient Relics?",
+              answer:
+                "Robo Raven and the Ancient Relics is a web-based online safety game developed by NAITEC Digital for the Australian eSafety Commissioner as part of the Mighty Heroes educational series. It teaches middle primary school students about digital safety topics including cyberbullying, privacy, critical thinking, and respectful online behaviour through interactive, game-based learning.",
+            },
+            {
+              question:
+                "Who built the eSafety Commissioner's Robo Raven game?",
+              answer:
+                "The game was built by NAITEC Digital, an Australian digital agency based in Newcastle, NSW. NAITEC Digital was responsible for all development, engineering, and deployment. ThinkHQ provided creative design and storyboarding, and PeakXD conducted UX research in schools.",
+            },
+            {
+              question:
+                "What technology is Robo Raven and the Ancient Relics built with?",
+              answer:
+                "The game is built with Angular and Ionic as a Progressive Web App (PWA). It uses Capacitor and Electron for cross-platform compatibility. The application is hosted on GovCMS, the Australian Government's Drupal-based SaaS platform, and stores no user data — all game state is kept entirely in memory to protect student privacy.",
+            },
+            {
+              question:
+                "Can the game be played offline or in low-connectivity areas?",
+              answer:
+                "Yes. The game was built as a PWA specifically to support rural and remote Australian schools with limited internet connectivity. It caches assets efficiently and was tested in real school environments, including rural schools, to ensure reliable performance on typical classroom devices.",
+            },
+            {
+              question: "Is the eSafety Robo Raven game free to play?",
+              answer:
+                "Yes. Robo Raven and the Ancient Relics is completely free, requires no login or account creation, and is available at esafety.gov.au/esafetyrelics. It is compatible with interactive whiteboards, tablets, laptops, and computers with a minimum screen resolution of 1024x768.",
+            },
+          ]),
+        ]
+      : slug === "beyond-drupal-hosting-a-progressive-web-app-on-govcms"
+        ? [
+            faqJsonLd([
+              {
+                question:
+                  "Can you host a single-page application on GovCMS?",
+                answer:
+                  "Yes. GovCMS SaaS can serve static files, which means any modern JavaScript framework (Angular, React, Vue) that compiles to static HTML, CSS, and JS can be deployed on GovCMS without additional server infrastructure.",
+              },
+              {
+                question: "Does NAITEC Digital work with GovCMS?",
+                answer:
+                  "Yes. NAITEC Digital is a BuyICT registered supplier specialising in GovCMS, Drupal, and government digital platforms. We work with federal, state, and local government agencies across Australia.",
+              },
+              {
+                question: "Can a PWA run on GovCMS?",
+                answer:
+                  "Yes. A Progressive Web App built with frameworks like Angular Ionic can be deployed on GovCMS as static assets. The service worker handles caching and offline functionality in the browser, independent of the hosting platform.",
+              },
+              {
+                question:
+                  "What government projects has NAITEC Digital delivered?",
+                answer:
+                  "NAITEC Digital built Robo Raven and the Ancient Relics for the Australian eSafety Commissioner — the most successful educational resource in the Commissioner's history. The game was built with Angular and Ionic, deployed on GovCMS, and serves classrooms across Australia including rural and remote schools.",
+              },
+            ]),
+          ]
+        : []),
   ];
 
   return (
