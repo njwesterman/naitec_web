@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.esafety.gov.au)"
+      "WebFetch(domain:www.esafety.gov.au)",
+      "Bash(git push heroku main)",
+      "Bash(npm run build)"
     ]
   }
 }
