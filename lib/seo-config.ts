@@ -80,5 +80,12 @@ export const siteConfig = {
     "GovCMS React",
     "GovCMS specialist",
     "Drupal government Australia",
+    // GovCMS Drupal upgrades
+    "GovCMS Drupal upgrade",
+    "GovCMS upgrade preparation",
+    "GovCMS migration",
+    "Drupal upgrade Australia",
+    "GovCMS automated testing",
+    "GovCMS Drupal Services Panel",
   ],
 };

@@ -150,7 +150,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               },
             ]),
           ]
-        : []),
+        : slug === "preparing-for-the-next-govcms-drupal-upgrade"
+          ? [
+              faqJsonLd([
+                {
+                  question:
+                    "How often does GovCMS upgrade Drupal?",
+                  answer:
+                    "GovCMS follows Drupal's release cycle, with major version upgrades typically happening every one to two years. Each version has a defined end-of-life, after which agencies must migrate to the next supported release.",
+                },
+                {
+                  question:
+                    "What happens if my agency doesn't prepare for a GovCMS Drupal upgrade?",
+                  answer:
+                    "Without preparation, agencies risk broken functionality during the cutover — including front-end display issues, broken forms, incompatible modules, and failed integrations. The short cutover window means there's limited time to diagnose and fix problems reactively.",
+                },
+                {
+                  question:
+                    "Can NAITEC Digital help with GovCMS Drupal upgrades?",
+                  answer:
+                    "Yes. NAITEC Digital is a BuyICT registered supplier with experience across multiple GovCMS Drupal upgrade cycles. We help agencies audit, prepare, test, and execute upgrades with minimal disruption.",
+                },
+                {
+                  question:
+                    "Do I need automated testing for a GovCMS upgrade?",
+                  answer:
+                    "Strongly recommended. Automated testing gives you a reliable way to verify that your site works correctly after the upgrade. Without it, you're relying on manual testing during a short cutover window, which significantly increases the risk of missed issues going live.",
+                },
+              ]),
+            ]
+          : []),
   ];
 
   return (

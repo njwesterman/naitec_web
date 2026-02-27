@@ -157,6 +157,95 @@ export const blogPosts: BlogPost[] = [
 <p>NAITEC Digital built <a href="/blogs/building-robo-raven-and-the-ancient-relics-for-the-esafety-commissioner">Robo Raven and the Ancient Relics</a> for the Australian eSafety Commissioner — the most successful educational resource in the Commissioner's history. The game was built with Angular and Ionic, deployed on GovCMS, and serves classrooms across Australia including rural and remote schools.</p>`,
   },
   {
+    slug: "preparing-for-the-next-govcms-drupal-upgrade",
+    title: "Preparing for the Next GovCMS Drupal Upgrade",
+    excerpt:
+      "GovCMS Drupal upgrades happen regularly — and they will break things. Here's what agencies need to know about the upgrade process, what can go wrong, and how to prepare before the cutover window opens.",
+    date: "2026-02-27",
+    image: "/images/blog/drupalupgrade.jpg",
+    content: `<p>If your agency runs a website on <a href="https://www.govcms.gov.au/" target="_blank" rel="noopener noreferrer">GovCMS</a>, a Drupal upgrade is either happening right now or coming soon. These upgrades are a regular part of the platform lifecycle — typically every year or two — and they are not optional. When GovCMS moves to a new version of Drupal, every site on the platform needs to follow.</p>
+
+<p>The good news is that with the right preparation, the process is manageable. The bad news is that without it, things break — sometimes in ways that aren't immediately obvious.</p>
+
+<h4>How the GovCMS Upgrade Process Works</h4>
+<p>GovCMS Drupal upgrades don't happen overnight. There's a structured process, and understanding it is the first step to being prepared.</p>
+<ul>
+<li><strong>Alpha and beta access.</strong> Well before the official cutover, developers get access to alpha and beta versions of the new Drupal release within the GovCMS environment. This is your window to start testing.</li>
+<li><strong>Compatibility audit.</strong> You install your existing codebase against the new Drupal version and identify what breaks. This becomes a project management task — a structured list of modules, themes, custom code, and configurations that need attention.</li>
+<li><strong>Preparation work.</strong> With the audit complete, you work through the list: updating modules, rewriting deprecated code, adjusting themes, and testing functionality. All of this happens before the official cutover.</li>
+<li><strong>The cutover window.</strong> When the new version goes live, agencies typically get a short window — often around two weeks — on a fresh SaaS instance running the new Drupal version. This is where you apply all your prepared changes to the new codebase and test everything end-to-end.</li>
+</ul>
+<p>The agencies that struggle are the ones that treat the cutover window as the starting point. By then, it's too late to be discovering problems.</p>
+
+<h4>What Can Break</h4>
+<p>A Drupal version upgrade is not a minor update. It can affect every layer of your site:</p>
+<ul>
+<li><strong>Contributed modules.</strong> Modules your site relies on may not have a compatible release for the new Drupal version. Some modules get deprecated or removed from the GovCMS distribution entirely.</li>
+<li><strong>Custom modules and code.</strong> Any custom development — forms, integrations, workflows — may use Drupal API functions that have been deprecated or removed in the new version.</li>
+<li><strong>Front-end theming.</strong> Template changes, Twig updates, and CSS/JS library changes can break your site's appearance and behaviour.</li>
+<li><strong>Back-end configuration.</strong> Content types, views, permissions, and workflows can all be affected by schema changes in the new Drupal version.</li>
+<li><strong>Third-party integrations.</strong> If your site connects to external APIs, analytics platforms, or authentication services, those integration points need to be re-validated.</li>
+</ul>
+<p>The scope of what can break is broad. A module that worked perfectly for years can suddenly be incompatible because a single Drupal core function it relied on has been removed.</p>
+
+<h4>The Testing Problem</h4>
+<p>One of the most common issues we see in GovCMS upgrade projects is that agencies don't have adequate automated testing in place <em>before</em> the upgrade starts. Without a solid test suite, you're flying blind during the cutover — you don't have a reliable way to confirm that everything still works after the migration.</p>
+<p>The right approach is to ensure automated testing practices are in place and current <em>well before</em> an upgrade is announced. This means:</p>
+<ul>
+<li><strong>Functional tests</strong> that cover your site's key user journeys — forms, search, navigation, content workflows.</li>
+<li><strong>Regression tests</strong> that catch unintended side effects when modules or code are updated.</li>
+<li><strong>Visual regression tests</strong> that flag front-end changes — layout shifts, broken styles, missing elements.</li>
+</ul>
+<p>When the upgrade arrives, these tests become your safety net. You run your suite against the new Drupal version, and the failures tell you exactly where the problems are. Without them, you're manually clicking through every page and hoping you catch everything.</p>
+<p>Critically, your test suite should be designed to survive the upgrade itself. Tests that are too tightly coupled to the current Drupal version's internals will break alongside the code they're meant to verify — which defeats the purpose entirely.</p>
+
+<h4>Why Start Now</h4>
+<p>The nature of GovCMS means there is always another Drupal upgrade on the horizon. The platform follows Drupal's release cycle, and each major version has a defined end-of-life. If your agency hasn't started preparing for the next upgrade, now is the time — not when the alpha drops.</p>
+<p>Starting early means:</p>
+<ul>
+<li><strong>No surprises during cutover.</strong> You've already identified and resolved compatibility issues.</li>
+<li><strong>Lower cost.</strong> Spreading the work over months is significantly cheaper than scrambling in a two-week window.</li>
+<li><strong>Better testing coverage.</strong> You have time to build and validate a test suite that will serve you through this upgrade and the next one.</li>
+<li><strong>Reduced risk.</strong> Your site stays live and functional throughout the transition, with no rushed deployments or untested changes.</li>
+</ul>
+
+<h4>What a Good Upgrade Partner Does</h4>
+<p>Not all <a href="https://www.govcms.gov.au/dsp" target="_blank" rel="noopener noreferrer">Drupal Services Panel</a> providers approach upgrades the same way. A good upgrade partner will:</p>
+<ul>
+<li><strong>Start with an audit, not a quote.</strong> Until you know what's going to break, any estimate is a guess.</li>
+<li><strong>Prepare during alpha/beta.</strong> The work should be largely done before the cutover window opens.</li>
+<li><strong>Invest in reusable testing.</strong> Your test suite should be an asset that carries forward, not a one-off cost that's thrown away after each upgrade.</li>
+<li><strong>Understand the full stack.</strong> GovCMS sites often include custom modules, integrations, and non-standard hosting arrangements. Your partner needs to be comfortable across all of it — not just Drupal theming.</li>
+<li><strong>Think beyond the current upgrade.</strong> The best preparation for the next upgrade is a well-maintained, well-tested codebase from this one.</li>
+</ul>
+
+<h4>Working with NAITEC Digital</h4>
+<p>At NAITEC Digital, we've been through multiple GovCMS Drupal upgrade cycles. We know the process, we know what breaks, and we know how to prepare for it properly.</p>
+<p>We work with government agencies to:</p>
+<ul>
+<li>Audit existing GovCMS sites for upgrade readiness</li>
+<li>Build and maintain automated test suites that survive version transitions</li>
+<li>Prepare all module, theme, and custom code changes during the alpha/beta period</li>
+<li>Execute a clean cutover with minimal disruption</li>
+<li>Support your site post-upgrade to catch anything that slips through</li>
+</ul>
+<p>If your agency is on GovCMS and you want to get ahead of the next upgrade, <a href="/contact">get in touch</a>. We'd rather help you prepare now than fix things under pressure later.</p>
+
+<h4>Frequently Asked Questions</h4>
+
+<p><strong>How often does GovCMS upgrade Drupal?</strong></p>
+<p>GovCMS follows Drupal's release cycle, with major version upgrades typically happening every one to two years. Each version has a defined end-of-life, after which agencies must migrate to the next supported release.</p>
+
+<p><strong>What happens if my agency doesn't prepare for a GovCMS Drupal upgrade?</strong></p>
+<p>Without preparation, agencies risk broken functionality during the cutover — including front-end display issues, broken forms, incompatible modules, and failed integrations. The short cutover window means there's limited time to diagnose and fix problems reactively.</p>
+
+<p><strong>Can NAITEC Digital help with GovCMS Drupal upgrades?</strong></p>
+<p>Yes. NAITEC Digital is a <a href="/government-services">BuyICT registered supplier</a> with experience across multiple GovCMS Drupal upgrade cycles. We help agencies audit, prepare, test, and execute upgrades with minimal disruption.</p>
+
+<p><strong>Do I need automated testing for a GovCMS upgrade?</strong></p>
+<p>Strongly recommended. Automated testing gives you a reliable way to verify that your site works correctly after the upgrade. Without it, you're relying on manual testing during a short cutover window, which significantly increases the risk of missed issues going live.</p>`,
+  },
+  {
     slug: "the-ai-first-internet",
     title: "The AI-First Internet",
     excerpt:
