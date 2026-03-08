@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import DriftingPixels from "./DriftingPixels";
 
 export default function Footer() {
   return (
@@ -67,6 +68,11 @@ export default function Footer() {
           <p className="text-sm text-white/50">
             ABN: 88 611 039 466
           </p>
+        </div>
+
+        {/* Easter egg */}
+        <div className="mt-4 flex justify-center">
+          <DriftingPixels />
         </div>
       </div>
     </footer>
