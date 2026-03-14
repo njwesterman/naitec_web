@@ -13,15 +13,15 @@ export const blogPosts: BlogPost[] = [
     title:
       "Building Robo Raven and the Ancient Relics for the eSafety Commissioner",
     excerpt:
-      "How NAITEC Digital built an Angular Ionic PWA for Australia's eSafety Commissioner — delivering an online safety game to classrooms nationwide, including rural and low-connectivity schools.",
+      "How NAITEC Digital built Robo Raven and the Ancient Relics — a Mighty Heroes adventure for Australia's eSafety Commissioner — delivering an online safety game to classrooms nationwide, including rural and low-connectivity schools.",
     date: "2026-02-26",
     image: "/images/blog/esafety-robo-raven-ancient-relics.png",
     content: `<p>We're proud to share that NAITEC Digital built <strong>Robo Raven and the Ancient Relics</strong> — a web-based educational game commissioned by the <a href="https://www.esafety.gov.au" target="_blank" rel="noopener noreferrer">Australian eSafety Commissioner</a>. The game is part of eSafety's <em>Mighty Heroes</em> series and has become the biggest launch and most popular educational resource in the Commissioner's history.</p>
 
 <p><a href="https://www.esafety.gov.au/esafetyrelics" target="_blank" rel="noopener noreferrer" style="font-weight:bold;">Play the game here →</a></p>
 
-<h4>What Is the Game?</h4>
-<p>Robo Raven and the Ancient Relics is an online safety adventure designed for middle primary school students. Players work through five levels of challenges, each covering a core online safety topic:</p>
+<h4>What Is the Mighty Heroes Game?</h4>
+<p>Robo Raven and the Ancient Relics is the latest adventure in the eSafety Commissioner's <strong>Mighty Heroes</strong> series — an online safety game designed for middle primary school students. Players work through five levels of challenges, each covering a core online safety topic:</p>
 <ul>
 <li><strong>Responsibility</strong> — digital footprints and protecting personal information.</li>
 <li><strong>Respect</strong> — respectful online relationships and the impact of cyberbullying.</li>
@@ -46,9 +46,9 @@ export const blogPosts: BlogPost[] = [
 <h4>Privacy by Design</h4>
 <p>One of the key architectural decisions was keeping all game state <strong>entirely in memory</strong>. There is no login, no account creation, and no data persisted between sessions. This was a deliberate choice — the game is used by children in classrooms, and we wanted to ensure that no school, student, or individual could ever be identified through the application. Progress lives only within a single play session, and nothing is stored or transmitted beyond that.</p>
 
-<h4>Built to Be Reused</h4>
-<p>We didn't just build a game — we built a set of <strong>reusable engines</strong>. Animations, sound management, and quiz logic are all architected as modular, component-based libraries that can be installed as packages into future educational projects. The quiz types themselves are component-driven, making it straightforward to add new levels or adapt the format for entirely different subject matter.</p>
-<p>This approach means the investment in Robo Raven extends well beyond a single release. The underlying engines are designed to power future eSafety educational tools and beyond.</p>
+<h4>Built to Be Reused Across the Mighty Heroes Series</h4>
+<p>We didn't just build a game — we built a set of <strong>reusable engines</strong>. Animations, sound management, and quiz logic are all architected as modular, component-based libraries that can be installed as packages into future Mighty Heroes adventures and other educational projects. The quiz types themselves are component-driven, making it straightforward to add new levels or adapt the format for entirely different subject matter.</p>
+<p>This approach means the investment in Robo Raven extends well beyond a single release. The underlying engines are designed to power future eSafety Mighty Heroes games and educational tools.</p>
 
 <h4>Hosting on Government Infrastructure</h4>
 <p>One of the more interesting engineering challenges was deployment. The eSafety Commissioner operates on an Azure environment without the budget for a dedicated Node server and Angular hosting setup. The existing infrastructure is <strong>GovCMS</strong> — a Drupal-based SaaS platform provided to Australian Government agencies.</p>
@@ -60,7 +60,7 @@ export const blogPosts: BlogPost[] = [
 <p>The game is compatible with interactive whiteboards, tablets, laptops, and computers, and was tested in real school environments, including rural schools, to validate performance and usability across the range of devices typically found in Australian classrooms.</p>
 
 <h4>The Impact</h4>
-<p>Since its launch, Robo Raven and the Ancient Relics has become the <strong>most popular educational resource</strong> the eSafety Commissioner has ever released. It's being used in classrooms across Australia, helping students develop the critical thinking and digital literacy skills they need to navigate the online world safely.</p>
+<p>Since its launch, Robo Raven and the Ancient Relics has become the <strong>most popular educational resource</strong> the eSafety Commissioner has ever released — and the most successful Mighty Heroes game to date. It's being used in classrooms across Australia, helping students develop the critical thinking and digital literacy skills they need to navigate the online world safely.</p>
 <p>We're incredibly proud of this project — it represents exactly the kind of work we love doing at NAITEC Digital: technically rigorous, purpose-driven, and built to make a genuine difference.</p>
 
 <h4>Frequently Asked Questions</h4>
@@ -79,6 +79,12 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Is the game free to play?</strong></p>
 <p>Yes. Robo Raven and the Ancient Relics is completely free, requires no login or account creation, and is available at <a href="https://www.esafety.gov.au/esafetyrelics" target="_blank" rel="noopener noreferrer">esafety.gov.au/esafetyrelics</a>. It is compatible with interactive whiteboards, tablets, laptops, and computers with a minimum screen resolution of 1024x768.</p>
+
+<p><strong>What is the eSafety Mighty Heroes series?</strong></p>
+<p>The Mighty Heroes series is a collection of online safety games and educational resources produced by the Australian eSafety Commissioner. The series is designed for primary school students and teaches digital citizenship, online safety, and critical thinking through interactive, game-based learning. Robo Raven and the Ancient Relics is the latest and most popular Mighty Heroes adventure, built by NAITEC Digital.</p>
+
+<p><strong>Who developed the Mighty Heroes Robo Raven game?</strong></p>
+<p>NAITEC Digital developed Robo Raven and the Ancient Relics — the newest game in the eSafety Mighty Heroes series. NAITEC Digital handled all development, engineering, and deployment, while ThinkHQ provided creative design and PeakXD conducted UX research in schools.</p>
 
 <p><a href="https://www.esafety.gov.au/esafetyrelics" target="_blank" rel="noopener noreferrer" style="font-weight:bold;">Play Robo Raven and the Ancient Relics →</a></p>`,
   },

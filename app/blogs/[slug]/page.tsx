@@ -85,7 +85,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           softwareApplicationJsonLd({
             name: "Robo Raven and the Ancient Relics: A Mighty Heroes Adventure",
             description:
-              "A web-based online safety game built by NAITEC Digital for the Australian eSafety Commissioner. Part of the Mighty Heroes series, it teaches primary school students about cyberbullying, privacy, critical thinking, and respectful online behaviour through game-based learning.",
+              "A web-based online safety game built by NAITEC Digital for the Australian eSafety Commissioner. The latest adventure in the eSafety Mighty Heroes series, it teaches primary school students about cyberbullying, privacy, critical thinking, and respectful online behaviour through interactive, game-based learning.",
             url: "https://www.esafety.gov.au/esafetyrelics",
             image: "/images/blog/esafety-robo-raven-ancient-relics.png",
             applicationCategory: "EducationalApplication",
@@ -120,6 +120,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               question: "Is the eSafety Robo Raven game free to play?",
               answer:
                 "Yes. Robo Raven and the Ancient Relics is completely free, requires no login or account creation, and is available at esafety.gov.au/esafetyrelics. It is compatible with interactive whiteboards, tablets, laptops, and computers with a minimum screen resolution of 1024x768.",
+            },
+            {
+              question: "What is the eSafety Mighty Heroes series?",
+              answer:
+                "The Mighty Heroes series is a collection of online safety games and educational resources produced by the Australian eSafety Commissioner. The series is designed for primary school students and teaches digital citizenship, online safety, and critical thinking through interactive, game-based learning. Robo Raven and the Ancient Relics is the latest and most popular Mighty Heroes adventure.",
+            },
+            {
+              question: "Who developed the Mighty Heroes Robo Raven game?",
+              answer:
+                "NAITEC Digital developed Robo Raven and the Ancient Relics — the newest game in the eSafety Mighty Heroes series. NAITEC Digital handled all development, engineering, and deployment, while ThinkHQ provided creative design and PeakXD conducted UX research in schools.",
             },
           ]),
         ]
