@@ -158,13 +158,13 @@ export default function Home() {
           <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, #1e3a5f 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
         </div>
         <div className="relative mx-auto max-w-7xl px-6">
-          <FadeIn>
+          <div>
             <h2 className="text-3xl font-bold text-primary md:text-4xl">What we do</h2>
             <p className="mt-4 max-w-2xl text-text-muted">
               We work with teams to fix, modernise, and build digital systems that
               support how they actually work.
             </p>
-          </FadeIn>
+          </div>
           <StaggerContainer className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.1}>
             {whatWeDo.map((item) => (
               <StaggerItem key={item.title}>

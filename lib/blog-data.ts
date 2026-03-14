@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     image: "/images/blog/esafety-robo-raven-ancient-relics.png",
     content: `<p>We're proud to share that NAITEC Digital built <strong>Robo Raven and the Ancient Relics</strong> — a web-based educational game commissioned by the <a href="https://www.esafety.gov.au" target="_blank" rel="noopener noreferrer">Australian eSafety Commissioner</a>. The game is part of eSafety's <em>Mighty Heroes</em> series and has become the biggest launch and most popular educational resource in the Commissioner's history.</p>
 
-<p><a href="https://www.esafety.gov.au/esafetyrelics" target="_blank" rel="noopener noreferrer" style="font-weight:bold;">Play the game here →</a></p>
+<p><a href="https://www.esafety.gov.au/esafetyrelics" target="_blank" rel="noopener noreferrer" class="cta-button">Play the game here →</a></p>
 
 <h4>What Is the Mighty Heroes Game?</h4>
 <p>Robo Raven and the Ancient Relics is the latest adventure in the eSafety Commissioner's <strong>Mighty Heroes</strong> series — an online safety game designed for middle primary school students. Players work through five levels of challenges, each covering a core online safety topic:</p>
@@ -86,7 +86,7 @@ export const blogPosts: BlogPost[] = [
 <p><strong>Who developed the Mighty Heroes Robo Raven game?</strong></p>
 <p>NAITEC Digital developed Robo Raven and the Ancient Relics — the newest game in the eSafety Mighty Heroes series. NAITEC Digital handled all development, engineering, and deployment, while ThinkHQ provided creative design and PeakXD conducted UX research in schools.</p>
 
-<p><a href="https://www.esafety.gov.au/esafetyrelics" target="_blank" rel="noopener noreferrer" style="font-weight:bold;">Play Robo Raven and the Ancient Relics →</a></p>`,
+<p><a href="https://www.esafety.gov.au/esafetyrelics" target="_blank" rel="noopener noreferrer" class="cta-button">Play Robo Raven and the Ancient Relics →</a></p>`,
   },
   {
     slug: "beyond-drupal-hosting-a-progressive-web-app-on-govcms",
